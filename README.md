@@ -26,9 +26,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 6. Open and close colapsible transition
 
-![](colapsible.gif)
+![](collapsible-open-close.gif)
 
-7. Error Handling when insert payment information - using FormGroup
+1. Error Handling when insert payment information - using FormGroup
 
 ![](error-handling.png)
 

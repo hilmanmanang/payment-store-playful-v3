@@ -8,8 +8,9 @@
     </div>
     <form [formGroup]="paymentForm" (ngSubmit)="submitForm()">
         <div class="bg-base-50 rounded-xl mb-8">
-            <div class="desktop:h-16 tablet:h-14 h-12 flex justify-between items-center tablet:px-6 px-4 w-full border-b-gray-200 border-b cursor-pointer"
-                (click)="showPayment = !showPayment">
+            <div class="desktop:h-16 tablet:h-14 h-12 flex justify-between items-center tablet:px-6 px-4 w-full cursor-pointer"
+                (click)="showPayment = !showPayment"
+                [ngClass]="showPayment ? 'border-b-gray-200 border-b' : ''">
                 <h2 class="desktop:text-lg text-base font-bold text-gray-900">Payment</h2>
                 <img src="assets/icon/arrow-down.png" class="tablet:w-5 tablet:h-5 w-4 h-4 transition-all duration-500"
                     [ngClass]="showPayment ? 'rotate-180' : 'rotate-0'" />
