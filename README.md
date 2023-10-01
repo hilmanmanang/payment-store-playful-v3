@@ -16,11 +16,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![](tablet-opened-order.png)
 
-4. Screen for Mobile (375 to 1023px) - with close Order Summary collapsible
+4. Screen for Mobile (375px to 1023px) - with close Order Summary collapsible
 
 ![](mobile-closed-order.png)
 
-5. Screen for Mobile (375 to 1023px) - with open Order Summary collapsible
+5. Screen for Mobile (375px to 1023px) - with open Order Summary collapsible
 
 ![](mobile-opened-order.png)
 
