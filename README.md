@@ -24,11 +24,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![](mobile-opened-order.png)
 
-6. Open and close colapsible transition
+6. Open and close colapsible smooth transition using transition
 
 ![](collapsible-open-close.gif)
 
-1. Error Handling when insert payment information - using FormGroup
+7. Error Handling when insert payment information - using FormGroup
 
 ![](error-handling.png)
 
