@@ -28,7 +28,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![](error-handling.png)
 
-7. Updating Cart with bubble number when submit payment form - using NgRx that dispatch the increment with initialState of localStorage length
+7. Updating Cart (top right corner) with bubble number when submit payment form - using NgRx that dispatch the increment with initialState of localStorage length
 
 ![](cart.png)
 
