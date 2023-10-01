@@ -24,14 +24,18 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![](mobile-opened-order.png)
 
-6. Error Handling when insert payment information - using FormGroup
+6. Open and close colapsible transition
+
+![](colapsible.gif)
+
+7. Error Handling when insert payment information - using FormGroup
 
 ![](error-handling.png)
 
-7. Updating Cart (top right corner) with bubble number when submit payment form - using NgRx that dispatch the increment with initialState of localStorage length
+8. Updating Cart (top right corner) with bubble number when submit payment form - using NgRx that dispatch the increment with initialState of localStorage length
 
 ![](cart.png)
 
-8. List Screen (when click Cart icon on top right corner) - routerLink to go to /link page
+9. List Screen (when click Cart icon on top right corner) - routerLink to go to /link page
 
 ![](list-screen.png)
