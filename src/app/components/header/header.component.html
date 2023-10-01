@@ -1,4 +1,13 @@
-<header class="h-[88px] border-b-gray-200 border flex items-center px-10">
-    <img src="assets/logo.png" alt="logo"/>
-    <h1 class="ml-[6px] text-gray-900 font-bold text-xl">Stores</h1>
+<header
+    class="desktop:h-[88px] tablet:h-[64px] h-[56px] border-b-gray-200 border-b flex items-center justify-between desktop:px-10 tablet:px-[180px] px-4 bg-base-50 fixed w-full z-[10000]">
+    <div class="flex items-center cursor-pointer" routerLink="/">
+        <img src="assets/stores-logo.png" alt="logo" class="tablet:w-8 tablet:h-8" />
+        <h1 class="ml-[6px] text-gray-900 font-bold tablet:text-xl text-base">Stores</h1>
+    </div>
+    <div class="relative cursor-pointer" routerLink="/list">
+        <img src="assets/icon/shopping-cart.svg" class="w-7 h-7"/>
+        <div class="absolute w-5 h-5 bg-blue-500 text-base-50 text-[10px] rounded-full font-semibold flex items-center justify-center -top-1 -right-2">
+            {{ count$ | async }}
+        </div>
+    </div>
 </header>

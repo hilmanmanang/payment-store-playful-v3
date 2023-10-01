@@ -1,0 +1,121 @@
+<section class="desktop:pl-[164px] desktop:pr-[136px] desktop:w-[956px] tablet:px-[180px] px-6 tablet:pb-20 pb-10">
+    <h1 class="font-bold desktop:text-2xl tablet:text-xl text-lg text-gray-900 mb-6">Payment Details</h1>
+    <div class="desktop:h-16 tablet:h-14 h-12 bg-base-50 rounded-xl flex justify-between items-center tablet:px-6 px-4 w-full mb-6 cursor-pointer"
+        (click)="showContact = !showContact">
+        <h2 class="desktop:text-lg text-base font-bold text-gray-900">Contact</h2>
+        <img src="assets/icon/arrow-down.png" class="tablet:w-5 tablet:h-5 w-4 h-4 transition-all duration-500"
+            [ngClass]="showContact ? 'rotate-180' : 'rotate-0'" />
+    </div>
+    <form [formGroup]="paymentForm" (ngSubmit)="submitForm()">
+        <div class="bg-base-50 rounded-xl mb-8">
+            <div class="desktop:h-16 tablet:h-14 h-12 flex justify-between items-center tablet:px-6 px-4 w-full border-b-gray-200 border-b cursor-pointer"
+                (click)="showPayment = !showPayment">
+                <h2 class="desktop:text-lg text-base font-bold text-gray-900">Payment</h2>
+                <img src="assets/icon/arrow-down.png" class="tablet:w-5 tablet:h-5 w-4 h-4 transition-all duration-500"
+                    [ngClass]="showPayment ? 'rotate-180' : 'rotate-0'" />
+            </div>
+            <div class="overflow-hidden transition-all duration-500 tablet:px-6 px-4"
+                [ngClass]="showPayment ? 'max-h-[600px] py-6' : 'max-h-0 py-0'">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="font-bold text-gray-900 tablet:text-base text-sm">Payment method</h3>
+                    <div class="flex gap-[2px] items-center tablet:hidden cursor-pointer">
+                        <img src="assets/icon/add.png" class="h-4 w-4" />
+                        <h4 class="text-sm text-blue-500 font-bold whitespace-nowrap">Add new</h4>
+                    </div>
+                </div>
+                <div class="flex mb-6 gap-4 items-center">
+                    <div class="flex-grow tablet:px-4 px-3 py-3 rounded-xl flex desktop:gap-4 tablet:gap-3 gap-2 cursor-pointer"
+                        (click)="selectedPayment = 'Visa'"
+                        [ngClass]="selectedPayment === 'Visa' ? 'border-blue-500 border-2' : 'border-gray-200 border'">
+                        <app-radio [selected]="selectedPayment === 'Visa'"></app-radio>
+                        <div class="flex justify-between w-full">
+                            <div>
+                                <div class="font-bold text-gray-900 desktop:text-base tablet:text-sm">**** 8304</div>
+                                <div class="font-medium text-gray-500 desktop:text-base tablet:text-sm">Visa・Edit</div>
+                            </div>
+                            <img class="desktop:w-12 desktop:h-12 tablet:w-10 tablet:h-10 tablet:block hidden"
+                                src="assets/logo/visa.png" />
+                        </div>
+                    </div>
+                    <div class="flex-grow tablet:px-4 px-3 py-3 rounded-xl flex desktop:gap-4 tablet:gap-3 gap-2 cursor-pointer"
+                        (click)="selectedPayment = 'Paypal'"
+                        [ngClass]="selectedPayment === 'Paypal' ? 'border-blue-500 border-2' : 'border-gray-200 border'">
+                        <app-radio [selected]="selectedPayment === 'Paypal'"></app-radio>
+                        <div class="flex justify-between w-full">
+                            <div>
+                                <div class="font-bold text-gray-900 desktop:text-base tablet:text-sm">**** 8304</div>
+                                <div class="font-medium text-gray-500 desktop:text-base tablet:text-sm">Paypal・Edit
+                                </div>
+                            </div>
+                            <img class="desktop:w-12 desktop:h-12 tablet:w-10 tablet:h-10 tablet:block hidden"
+                                src="assets/logo/paypal.png" />
+                        </div>
+                    </div>
+                    <div
+                        class="py-3 px-2 border-gray-200 border rounded-xl desktop:w-[76px] tablet:w-[72px] tablet:block hidden cursor-pointer">
+                        <img src="assets/icon/add-square.png"
+                            class="mb-[2px] m-auto desktop:w-6 desktop:h-6 tablet:w-5 tablet:h-5" />
+                        <h3 class="font-medium text-blue-500 text-center desktop:text-base tablet:text-sm">New</h3>
+                    </div>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2 tablet:text-base text-sm">Card holder name</h3>
+                <input
+                    class="tablet:h-12 h-10 w-full rounded-xl px-4 placeholder:text-gray-500 placeholder:tablet:text-base placeholder:text-sm"
+                    placeholder="Ex. Jane Cooper" formControlName="name"
+                    [ngClass]="paymentFormError && name?.invalid ? 'border-red-900 border-2' : 'border-gray-200 border'" />
+                <div class="mt-1 flex items-center gap-2" *ngIf="paymentFormError && name?.invalid">
+                    <img src="assets/icon/info-circle.png" />
+                    <h4 class="text-red-900 text-sm font-medium">Card holder name is
+                        required!</h4>
+                </div>
+
+                <h3 class="font-bold text-gray-900 mt-6 mb-2 tablet:text-base text-sm">Billing address</h3>
+                <div class="relative mb-6">
+                    <select
+                        class="tablet:h-12 h-10 w-full rounded-xl border-gray-200 border px-4 appearance-none tablet:text-base text-sm"
+                        formControlName="address">
+                        <option class="tablet:text-base text-sm" value="United States">United States</option>
+                        <option class="tablet:text-base text-sm" value="Malaysia">Malaysia</option>
+                    </select>
+                    <img class="absolute top-[14px] right-3 tablet:w-5 tablet:h-5 w-4 h-4"
+                        src="assets/icon/arrow-down-bold.png" />
+                </div>
+                <div class="flex gap-6">
+                    <div class="flex-grow">
+                        <h3 class="font-bold text-gray-900 mb-2 tablet:text-base text-sm">Zip code</h3>
+                        <input
+                            class="tablet:h-12 h-10 w-full rounded-xl px-4 placeholder:text-gray-500 placeholder:tablet:text-base placeholder:text-sm"
+                            placeholder="Ex. 73923" formControlName="zip"
+                            [ngClass]="paymentFormError && zip?.invalid ? 'border-red-900 border-2' : 'border-gray-200 border'" />
+                        <div class="mt-1 flex items-center gap-2" *ngIf="paymentFormError && zip?.invalid">
+                            <img src="assets/icon/info-circle.png" />
+                            <h4 class="text-red-900 text-sm font-medium">Zip code is
+                                required!</h4>
+                        </div>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="font-bold text-gray-900 mb-2 tablet:text-base text-sm">City</h3>
+                        <input
+                            class="tablet:h-12 h-10 w-full rounded-xl px-4 placeholder:text-gray-500 placeholder:tablet:text-base placeholder:text-sm"
+                            placeholder="Ex. New York" formControlName="city"
+                            [ngClass]="paymentFormError && city?.invalid ? 'border-red-900 border-2' : 'border-gray-200 border'" />
+                        <div class="mt-1 flex items-center gap-2" *ngIf="paymentFormError && city?.invalid">
+                            <img src="assets/icon/info-circle.png" />
+                            <h4 class="text-red-900 text-sm font-medium">City is
+                                required!</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex gap-3 mb-6 items-center cursor-pointer" (click)="isBillingAddressSame = !isBillingAddressSame">
+            <app-checkbox [selected]="isBillingAddressSame"></app-checkbox>
+            <h3 class="text-gray-500 font-medium">Billing address is same as shipping</h3>
+        </div>
+        <button type="submit" [disabled]="showSuccessMessage"
+            class="text-base-50 tablet:h-12 h-10 w-full rounded-xl tablet:text-base text-sm"
+            [ngClass]="showSuccessMessage ? 'bg-blue-200 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600'">Pay
+            $51.00</button>
+        <div class="text-blue-500 text-right mt-2 font-semibold" *ngIf="showSuccessMessage">Payment is submitted!</div>
+    </form>
+</section>
