@@ -36,6 +36,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![](cart.png)
 
-9. List Screen (when click Cart icon on top right corner) - routerLink to go to /link page
+9. List Screen (when click Cart icon on top right corner) - routerLink to go to /list page
 
 ![](list-screen.png)
